@@ -1,0 +1,27 @@
+
+%h1= @quotes.first.content
+%h3
+  %em From:
+  = @quotes.first.author
+%a.btn.btn-default.btn-lg{href: "#about"} Previous
+%a.btn.btn-default.btn-lg{href: "#about"} Next
+
+-# %h1 Listing quotes
+-# %table
+-#   %thead
+-#     %tr
+-#       %th Content
+-#       %th Author
+-#       %th
+-#       %th
+-#       %th
+-#   %tbody
+-#     - @quotes.each do |quote|
+-#       %tr
+-#         %td= quote.content
+-#         %td= quote.author
+-#         %td= link_to 'Show', quote
+-#         %td= link_to 'Edit', edit_quote_path(quote)
+-#         %td= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' }
+-# %br/
+-# = link_to 'New Quote', new_quote_path
