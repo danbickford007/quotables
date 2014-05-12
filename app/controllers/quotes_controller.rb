@@ -1,8 +1,12 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @quotes = Quote.all
+    @quote = params[:id].present? ? Quote.find(params[:id]) : Quote.first
+    respond_to do |format|
+      format.html{@quote}
+      format.json{render json: @quote}
+    end
   end
 
   def show
