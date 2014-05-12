@@ -222,7 +222,7 @@ i.scroll:hover {
 @media (max-width: 768px) {
 	
   .header {
-	background: url(/assets/paper.jpg) no-repeat center center scroll; 
+	background: url(/assets/paper.jpg) center center scroll; 
   }
 
   .callout {
