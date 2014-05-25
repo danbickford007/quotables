@@ -1,6 +1,9 @@
-[![Build Status](https://secure.travis-ci.org/danbickford007/quotables.png)](http://travis-ci.org/danbickford007/quotables?branch=master)
+# http://www.quotablesonline.com
 
-QUOTABLES ONLINE
+[![Build Status](https://secure.travis-ci.org/danbickford007/quotables.png)](http://travis-ci.org/danbickford007
+/quotables?branch=master)
+
+# Requesting a quote
 
     curl http://www.quotablesonline.com?id=2&direction=next
 
