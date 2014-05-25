@@ -9,7 +9,7 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'devise'
-group :development do
+group :test, :development do
   gem 'rspec-rails'
 end
 # Use SCSS for stylesheets
