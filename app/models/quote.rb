@@ -12,9 +12,9 @@ class Quote < ActiveRecord::Base
 
   def generate_next(direction)
     if direction == 'next' 
-      @quote = Quote.find(@quote.next.id)
+      @quote = Quote.find(self.next.id)
     elsif direction == 'previous'
-      @quote = Quote.find(@quote.prev.id)
+      @quote = Quote.find(self.prev.id)
     end
     @quote || self
   end

@@ -49,7 +49,7 @@ describe Quote do
 
     context 'direction not correct' do
      
-      it 'returns first quote' do
+      it 'returns original quote' do
         expect(quote_1.generate_next('car')).to eq(quote_1)
       end
 
@@ -66,7 +66,7 @@ describe Quote do
     context 'direction is prev ' do
      
       it 'returns first quote' do
-        expect(quote_2.generate_next('prev')).to eq(quote_1)
+        expect(quote_2.generate_next('previous')).to eq(quote_1)
       end
 
     end 
