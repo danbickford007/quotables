@@ -11,7 +11,6 @@ class Quote < ActiveRecord::Base
   end
 
   def generate_next(direction)
-    @quote = Quote.first
     if direction == 'next' 
       @quote = Quote.find(@quote.next.id)
     elsif direction == 'previous'
