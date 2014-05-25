@@ -16,7 +16,7 @@ class Quote < ActiveRecord::Base
     elsif direction == 'previous'
       @quote = Quote.find(@quote.prev.id)
     end
-    @quote
+    @quote || self
   end
 
 end
