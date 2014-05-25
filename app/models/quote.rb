@@ -10,8 +10,8 @@ class Quote < ActiveRecord::Base
     quote ? quote : Quote.last
   end
 
-  def self.generate_next(id, direction)
-    @quote = id.present? ? Quote.find(id) : Quote.first
+  def generate_next(direction)
+    @quote = Quote.first
     if direction == 'next' 
       @quote = Quote.find(@quote.next.id)
     elsif direction == 'previous'
