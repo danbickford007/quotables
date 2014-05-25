@@ -9,7 +9,9 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'devise'
-gem 'rspec-rails'
+group :development do
+  gem 'rspec-rails'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
