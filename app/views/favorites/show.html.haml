@@ -1,0 +1,7 @@
+%p#notice= notice
+
+%p
+  %b Quote:
+  = simple_format @favorite.quote.content, class: 'cursive'
+
+= link_to 'Back', favorites_path

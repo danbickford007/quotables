@@ -1,28 +1,12 @@
+%b{style: "color:green"}= flash[:notice]
 = simple_format @quote.content, class: 'cursive'
 %h3
   %em From:
   = @quote.author
 %br
 %br
-%a.btn.btn-default.btn-lg{href: "/quotes?id=#{@quote.prev.id}"} Previous
-%a.btn.btn-default.btn-lg{href: "/quotes?id=#{@quote.next.id}"} Next
-
--# %h1 Listing quotes
--# %table
--#   %thead
--#     %tr
--#       %th Content
--#       %th Author
--#       %th
--#       %th
--#       %th
--#   %tbody
--#     - @quotes.each do |quote|
--#       %tr
--#         %td= quote.content
--#         %td= quote.author
--#         %td= link_to 'Show', quote
--#         %td= link_to 'Edit', edit_quote_path(quote)
--#         %td= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' }
--# %br/
--# = link_to 'New Quote', new_quote_path
+= form_for Favorite.new do |f|
+  %a.btn.btn-default.btn-lg{href: "/quotes?id=#{@quote.prev.id}"} Previous
+  = f.hidden_field :quote_id, value: @quote.id
+  = f.submit 'Favorite', class: "btn btn-default btn-lg", method: 'POST'
+  %a.btn.btn-default.btn-lg{href: "/quotes?id=#{@quote.next.id}"} Next

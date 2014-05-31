@@ -4,7 +4,7 @@
     %meta{charset: "utf-8"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %meta{content: "Quotables throughout time", name: "description"}/
-    %meta{content: "Vanessa Zolnierowski", name: "author"}/
+    %meta{content: "Vanessa Zolnierowski - Dan Bickford", name: "author"}/
     %link{:href => "/assets/quotables.png", :rel => "shortcut icon"}/
     %title QUOTABLES ONLINE
     = stylesheet_link_tag 'application'
@@ -24,16 +24,26 @@
         %a#menu-close.btn.btn-default.btn-lg.pull-right.toggle{href: "#"}
           %i.fa.fa-times
         %li.sidebar-brand
-          %a{href: ""} Quotables Online
+          - if current_user
+            %a{href: "/"}= current_user.email[0...16] 
+          - else
+            %a{href: "/"} Quotables Online
         %li
-          %a{href: "/quotes/new"} Admin
+          %a{href: "/quotes"} Quotes
         - if current_user
-          %li
-            %a{href: "/quotes/new"} New Quote
-          %li
-            %a{href: "/quotes"} Quote View
+          - if current_user.email == 'vanessakayez@aim.com'
+            %li
+              %a{href: "/quotes/new"} New Quote
+          - else
+            %li
+              %a{href: "/favorites"} Favorites
           %li
             = link_to 'Logout', '/users/sign_out', method: 'DELETE'
+        - else
+          %li
+            %a{href: "/favorites"} Login
+          %li
+            %a{href: "/quotes/new"} Admin
           -# %li
           -#   %a{href: "#portfolio"} Portfolio
           -# %li
@@ -155,7 +165,7 @@
     -#         %p Copyright © Company 2013
     / /Footer
     / JavaScript
-    %script{src: "js/jquery-1.10.2.js"}
+    -# %script{src: "js/jquery-1.10.2.js"}
     %script{src: "js/bootstrap.js"}
     / Custom JavaScript for the Side Menu and Smooth Scrolling
     :javascript

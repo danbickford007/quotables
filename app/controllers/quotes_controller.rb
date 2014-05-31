@@ -1,6 +1,12 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :only_vanessa, except: :index
+
+  def only_vanessa
+    redirect_to '/' if current_user.email != 'vanessakayez@aim.com'
+  end
+
   def index
     @quote = params[:id].present? ? Quote.find_by_id(params[:id]) : Quote.first
     @quote = @quote.generate_next(params[:direction])

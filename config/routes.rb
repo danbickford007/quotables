@@ -1,4 +1,6 @@
 Quotables::Application.routes.draw do
+  resources :favorites
+
   devise_for :users
   resources :quotes
   root to: "quotes#index"

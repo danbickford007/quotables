@@ -1,0 +1,15 @@
+%center
+  %h4 Favorites
+  %table
+    %tr
+      %th{style:'width:79%'} 
+      %th
+      %th
+
+    - @favorites.each do |favorite|
+      %tr
+        %td= simple_format favorite.quote.content[0...15], class: 'cursive'
+        %td= link_to 'Show', favorite 
+        %td= link_to 'Destroy', favorite, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

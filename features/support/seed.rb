@@ -6,3 +6,7 @@ user = User.new(email: 'test@user.com')
 user.password = 'password1'
 user.password_confirmation = 'password1'
 user.save
+user = User.new(email: 'vanessakayez@aim.com')
+user.password = 'password1'
+user.password_confirmation = 'password1'
+user.save

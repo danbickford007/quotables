@@ -1,5 +1,5 @@
 When(/^I fill in credentials$/) do
-  fill_in 'user_email', with: 'test@user.com'
+  fill_in 'user_email', with: 'vanessakayez@aim.com'
   fill_in 'user_password', with: 'password1'
   click_button "Sign in"
 end
@@ -11,7 +11,7 @@ end
 Given(/^I am on the new quote view$/) do
   @quote_count = Quote.all.count
   visit '/users/sign_in'
-  fill_in 'user_email', with: 'test@user.com'
+  fill_in 'user_email', with: 'vanessakayez@aim.com'
   fill_in 'user_password', with: 'password1'
   click_button "Sign in"
   click_link 'New Quote'
