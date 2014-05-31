@@ -1,5 +1,5 @@
 class Quote < ActiveRecord::Base
-
+  validates :content, :author, uniqueness: true
   def next
     quote = Quote.where("id > ?", id).order("id ASC").first
     quote ? quote : Quote.first
