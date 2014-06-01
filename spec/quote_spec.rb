@@ -1,7 +1,11 @@
 require 'spec_helper'
 
 describe Quote do
-  
+
+  before(:all) do
+    Quote.destroy_all
+  end
+
   let!(:quote_1) { Quote.create(author: 'guy 1', content: 'a quote about 1') }
   let!(:quote_2) { Quote.create(author: 'guy 2', content: 'a quote about 2') }
 
