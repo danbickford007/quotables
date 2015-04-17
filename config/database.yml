@@ -45,6 +45,8 @@ test: &test
   adapter: postgresql
   encoding: unicode
   database: quotables_test
+  user: docker
+  password: 'docker'
   pool: 5
 
 production:
