@@ -46,6 +46,7 @@ test: &test
   encoding: unicode
   database: quotables_test
   user: danci
+  password: 'danci'
   pool: 5
 
 production:
