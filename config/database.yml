@@ -44,7 +44,7 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: quotables_test
+  database: danci
   user: danci
   password: 'danci'
   pool: 5
