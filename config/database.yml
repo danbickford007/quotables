@@ -45,6 +45,7 @@ test: &test
   adapter: postgresql
   encoding: unicode
   database: danci
+  template: template0
   user: danci
   password: 'danci'
   pool: 5
